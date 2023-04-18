@@ -1,6 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./components/App";
-import "./index.css";
+import { render, screen } from "@testing-library/react";
+import Header from "./Header";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+describe("Header component", () => {
+  test("displays the text 'hello from the Header!'", () => {
+    render(<Header />);
+    expect(screen.queryByText("hello from the Header!")).toBeInTheDocument();
+  });
+});
